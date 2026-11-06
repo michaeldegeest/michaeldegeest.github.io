@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Michael De Geest</title>
+<meta name="description" content="Persoonlijke site van Michael De Geest: boekhouding, cijfers en webprojecten.">
+<meta property="og:title" content="Michael De Geest">
+<meta property="og:description" content="Boekhouding, cijfers en webprojecten.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Literata:opsz,wght@7..72,400;7..72,500&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: één smalle kolom; projecten staan als regels in een grootboek (datum · omschrijving · status). */
+:root{
+  --bg:#f5f6f8; --surface:#ffffff; --ink:#15171d; --muted:#5d6270; --line:#d9dce3; --accent:#2a46c9; --accent-soft:#e6eafb;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Literata",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#111319; --surface:#181b23; --ink:#e7e9ef; --muted:#9aa0ae; --line:#2a2e3a; --accent:#8aa0ff; --accent-soft:#1e2540; color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;
+  padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));
+  padding-block:max(48px,env(safe-area-inset-top,0px)) 64px}
+main{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:64px}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(2.6rem,9vw,4.6rem);line-height:1;letter-spacing:-.03em;margin:.35em 0 .3em;text-wrap:balance}
+h2{font-family:var(--display);font-weight:700;font-size:1.5rem;letter-spacing:-.01em;margin:0 0 16px}
+.lead{font-size:1.2rem;max-width:34em;margin:0}
+.intro{display:flex;flex-direction:column}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.links a{font-family:var(--mono);font-size:.85rem;text-decoration:none;border:1px solid var(--line);padding:6px 12px;border-radius:4px;color:var(--ink);background:var(--surface)}
+.links a:hover{border-color:var(--accent);color:var(--accent)}
+section p{margin:0 0 14px;max-width:38em}
+.ledger{border-top:2px solid var(--ink);margin:0;padding:0;list-style:none}
+.ledger li{display:grid;grid-template-columns:5.5rem minmax(0,1fr) auto;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+.ledger time,.ledger .st{font-family:var(--mono);font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.ledger h3{font-family:var(--display);font-weight:500;font-size:1.15rem;margin:0}
+.ledger p{margin:4px 0 0;font-size:.95rem;color:var(--muted)}
+.st{white-space:nowrap}
+.st.live{color:var(--accent)}
+@media (max-width:520px){.ledger li{grid-template-columns:minmax(0,1fr) auto}.ledger time{grid-column:1/-1}}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.skills li{font-family:var(--mono);font-size:.82rem;background:var(--accent-soft);color:var(--ink);padding:4px 10px;border-radius:3px}
+footer{max-width:720px;margin:64px auto 0;font-family:var(--mono);font-size:.78rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (prefers-reduced-motion:no-preference){
+  .intro>*{animation:rise .6s cubic-bezier(.2,.7,.2,1) both}
+  .intro>*:nth-child(2){animation-delay:.06s}.intro>*:nth-child(3){animation-delay:.12s}.intro>*:nth-child(4){animation-delay:.18s}
+  @keyframes rise{from{transform:translateY(8px)}to{transform:none}}
+}
+</style>
+</head>
+<body>
+<main>
+  <!-- Pas de teksten hieronder gerust aan naar je eigen woorden. -->
+  <header class="intro">
+    <p class="eyebrow">Antwerpen · Boekhouding &amp; web</p>
+    <h1>Michael De Geest</h1>
+    <p class="lead">Ik werk met cijfers: grootboeken, afrekeningen en balansen die moeten kloppen tot op de cent. Daarnaast bouw ik websites.</p>
+    <nav class="links" aria-label="Links">
+      <a href="#projecten">Projecten</a>
+      <a href="#over">Over mij</a>
+      <a href="https://github.com/michaeldegeest">GitHub</a>
+    </nav>
+  </header>
+
+  <section id="over">
+    <h2>Over mij</h2>
+    <p>In mijn werk zorg ik ervoor dat kosten correct verdeeld worden, facturen juist geboekt staan en afrekeningen op tijd en foutloos de deur uitgaan. Nauwkeurigheid en duidelijke communicatie staan daarbij centraal.</p>
+    <p>Naast de boekhouding leer ik graag bij over webontwikkeling. Op deze site verzamel ik mijn projecten.</p>
+  </section>
+
+  <section id="projecten">
+    <h2>Projecten</h2>
+    <ul class="ledger">
+      <li>
+        <time datetime="2020">2020</time>
+        <div>
+          <h3><a href="XtreemTravel/">XtreemTravel</a></h3>
+          <p>Website voor een reisbureau met avontuurlijke reizen. Gebouwd met HTML, SCSS en Bootstrap.</p>
+        </div>
+        <span class="st live">online</span>
+      </li>
+      <li>
+        <time datetime="2026">2026</time>
+        <div>
+          <h3>Persoonlijke site</h3>
+          <p>Deze pagina: één HTML-bestand, zonder framework, met lichte en donkere modus.</p>
+        </div>
+        <span class="st live">online</span>
+      </li>
+      <li>
+        <time>—</time>
+        <div>
+          <h3>Volgend project</h3>
+          <p>Hier komt het volgende project.</p>
+        </div>
+        <span class="st">gepland</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="vaardigheden">
+    <h2>Vaardigheden</h2>
+    <ul class="skills">
+      <li>Boekhouding</li><li>Afrekeningen</li><li>Excel</li><li>Btw</li>
+      <li>HTML</li><li>CSS / SCSS</li><li>Bootstrap</li><li>Git</li>
+    </ul>
+  </section>
+</main>
+<footer>
+  <span>© 2026 Michael De Geest</span>
+  <a href="https://github.com/michaeldegeest">github.com/michaeldegeest</a>
+</footer>
+</body>
+</html>
